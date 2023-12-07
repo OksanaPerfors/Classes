@@ -1,3 +1,5 @@
+import { Character } from "./classCharacter.js";
+
 export default function character(parm) {
   if (parm.health > 50) {
     return "healthy";
@@ -17,3 +19,57 @@ export const charactersStatus = [
 export function compare(charactersStatus) {
   return charactersStatus.sort((a, b) => b.health - a.health);
 }
+
+class Bowerman extends Character {
+  constructor(name, type, attack, defence) {
+    super(name, type, attack, defence);
+    this.check();
+  }
+}
+
+const bowman = new Bowerman("Bro", "Bowman", 25, 25);
+
+class Swordsman extends Character {
+  constructor(name, type, attack, defence) {
+    super(name, type, attack, defence);
+    this.check();
+  }
+}
+
+const swordsman = new Swordsman("Sword", "Swordsman", 40, 10);
+
+class Magician extends Character {
+  constructor(name, type, attack, defence) {
+    super(name, type, attack, defence);
+    this.check();
+  }
+}
+
+const magician = new Swordsman("Sword", "Magician", 10, 40);
+
+class Daemon extends Character {
+  constructor(name, type, attack, defence) {
+    super(name, type, attack, defence);
+    this.check();
+  }
+}
+
+const daemon = new Swordsman("Den", "Daemon", 10, 40);
+
+class Undead extends Character {
+  constructor(name, type, attack, defence) {
+    super(name, type, attack, defence);
+    this.check();
+  }
+}
+
+const undead = new Swordsman("Death", "Undead", 10, 40);
+
+class Zombie extends Character {
+  constructor(name, type, attack, defence) {
+    super(name, type, attack, defence);
+    this.check();
+  }
+}
+
+const zombie = new Swordsman("Zoui", "Zombie", 10, 40);
