@@ -45,7 +45,7 @@ class Magician extends Character {
   }
 }
 
-const magician = new Swordsman("Sword", "Magician", 10, 40);
+const magician = new Magician("Mag", "Magician", 10, 40);
 
 class Daemon extends Character {
   constructor(name, type, attack, defence) {
@@ -54,7 +54,7 @@ class Daemon extends Character {
   }
 }
 
-const daemon = new Swordsman("Den", "Daemon", 10, 40);
+const daemon = new Daemon("Den", "Daemon", 10, 40);
 
 class Undead extends Character {
   constructor(name, type, attack, defence) {
@@ -63,7 +63,7 @@ class Undead extends Character {
   }
 }
 
-const undead = new Swordsman("Death", "Undead", 10, 40);
+const undead = new Undead("Death", "Undead", 25, 25);
 
 class Zombie extends Character {
   constructor(name, type, attack, defence) {
@@ -72,4 +72,4 @@ class Zombie extends Character {
   }
 }
 
-const zombie = new Swordsman("Zoui", "Zombie", 10, 40);
+const zombie = new Zombie("Zoui", "Zombie", 40, 10);
