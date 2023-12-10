@@ -5,29 +5,30 @@ export const typeErrorMessage = "Wrong type";
 export const levelUpErrorMessage = "нельзя повысить левел умершего";
 
 export class Character {
-  constructor(name, type, attack, defence) {
+  constructor(name, type) {
     this.name = name;
     this.type = type;
     this.health = 100;
     this.level = 1;
-    this.attack = attack;
-    this.defence = defence;
+    this.attack = undefined;
+    this.defence = undefined;
   }
   check() {
+    const types = [
+      "Bowman",
+      "Swordsman",
+      "Magician",
+      "Daemon",
+      "Undead",
+      "Zombie",
+    ];
     if (typeof this.name !== "string") {
       throw new Error(nameStringErrorMessage);
     }
     if (this.name.length < 2 || this.name.length >= 10) {
       throw new Error(nameLengthErrorMessage);
     }
-    if (
-      this.type !== "Bowman" &&
-      this.type !== "Swordsman" &&
-      this.type !== "Magician" &&
-      this.type !== "Daemon" &&
-      this.type !== "Undead" &&
-      this.type !== "Zombie"
-    ) {
+    if (!types.includes(this.type)) {
       throw new Error(typeErrorMessage);
     }
   }

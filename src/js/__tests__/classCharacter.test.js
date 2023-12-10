@@ -1,13 +1,15 @@
 import {
-  Character,
+  // Character,
   nameLengthErrorMessage,
   nameStringErrorMessage,
   typeErrorMessage,
   levelUpErrorMessage,
-} from "../classCharacter.js";
+} from "../Classes/classCharacter.js";
+
+import { Bowerman } from "../Classes/Bowerman.js";
 
 test("check className", () => {
-  const character = new Character("B", "Bowman", 25, 25);
+  const character = new Bowerman("B", "Bowman");
   try {
     character.check();
   } catch (error) {
@@ -18,7 +20,7 @@ test("check className", () => {
 });
 
 test("check nameIsString", () => {
-  const character = new Character(2, "Bowman", 25, 25);
+  const character = new Bowerman(2, "Bowman");
   try {
     character.check();
   } catch (error) {
@@ -29,7 +31,7 @@ test("check nameIsString", () => {
 });
 
 test("check type", () => {
-  const character = new Character("Bro", "Bowman ", 25, 25);
+  const character = new Bowerman("Bro", "Bowman ");
   try {
     character.check();
   } catch (error) {
@@ -40,13 +42,13 @@ test("check type", () => {
 });
 
 test("check damage", () => {
-  const character = new Character("Bro", "Bowman", 25, 25);
+  const character = new Bowerman("Bro", "Bowman");
   character.damage(50);
   expect(character.health).toBe(62.5);
 });
 
 test("check LevelUp", () => {
-  const character = new Character("Bro", "Bowman", 25, 25);
+  const character = new Bowerman("Bro", "Bowman");
   character.health = 0;
   try {
     character.levelUp();
